@@ -3,6 +3,10 @@ language: python
 
 cache: pip
 
+arch:
+    - amd64
+    - ppc64le
+
 matrix:
   fast_finish: true
   include:
