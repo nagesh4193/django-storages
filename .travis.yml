@@ -3,10 +3,6 @@ language: python
 
 cache: pip
 
-arch:
-    - amd64
-    - ppc64le
-
 matrix:
   fast_finish: true
   include:
@@ -39,10 +35,61 @@ matrix:
       env: TOXENV=py37-djangomaster
     - python: 3.8
       env: TOXENV=py38-djangomaster
+#Added power support ppc64le      
+    - arch: ppc64le
+      env: TOXENV=flake8
+    - arch: ppc64le
+      python: 3.5
+      env: TOXENV=integration
+    - arch: ppc64le
+      python: 3.5
+      env: TOXENV=py35-django22
+    - arch: ppc64le
+      python: 3.6
+      env: TOXENV=py36-django22
+    - arch: ppc64le
+      python: 3.7
+      env: TOXENV=py37-django22
+    - arch: ppc64le
+      python: 3.8
+      env: TOXENV=py38-django22
+    - arch: ppc64le
+      python: 3.6
+      env: TOXENV=py36-django30
+    - arch: ppc64le
+      python: 3.7
+      env: TOXENV=py37-django30
+    - arch: ppc64le
+      python: 3.8
+      env: TOXENV=py38-django30
+    - arch: ppc64le
+      python: 3.6
+      env: TOXENV=py36-django31
+    - arch: ppc64le
+      python: 3.7
+      env: TOXENV=py37-django31
+    - arch: ppc64le
+      python: 3.8
+      env: TOXENV=py38-django31
+    - arch: ppc64le
+      python: 3.6
+      env: TOXENV=py36-djangomaster
+    - arch: ppc64le
+      python: 3.7
+      env: TOXENV=py37-djangomaster
+    - arch: ppc64le
+      python: 3.8
+      env: TOXENV=py38-djangomaster
   allow_failures:
     - env: TOXENV=py36-djangomaster
     - env: TOXENV=py37-djangomaster
     - env: TOXENV=py38-djangomaster
+    - arch: ppc64le
+      env: TOXENV=py36-djangomaster
+    - arch: ppc64le
+      env: TOXENV=py36-djangomaster
+    - arch: ppc64le
+      env: TOXENV=py36-djangomaster
 
 install:
   - pip install tox
